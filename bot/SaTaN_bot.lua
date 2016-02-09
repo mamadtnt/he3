@@ -230,14 +230,23 @@ function create_config( )
     sudo_users = {119989724,187769689,118682430},--Sudo users
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
-    about_text = [[W_SaTaN_W V 1
-    Advanced Bot Base On Seed
+    about_text = [[E M C
+    a new bot for manage your groups
     
-    @WilSoN_DeVeLoPeR[DeVeLoPeR] 
+    our team :
     
-    #Open_Source 
-    [@W_SaTaN_W] [Https://github.com/DeterGent-Legion/MeGa_SaTaN]
+    @Shahabambesik [developer]
     
+   Mr_bangi [founder]
+   
+   @arsalan_sahel [manager]
+   
+   For Free groups Ask @Mr_bangi
+   
+    our channel:
+    
+    https://telegram.me/joinchat/Bybl3D1DmRBbByAA8ujbbg
+
 ]],
     help_text_realm = [[
 Realm Commands:
