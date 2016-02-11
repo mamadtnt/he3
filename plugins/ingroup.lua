@@ -215,7 +215,6 @@ local function show_group_settingsmod(msg, data, target)
     if data[tostring(msg.to.id)]['settings']['lock_eng'] then
         lock_eng = data[tostring(msg.to.id)]['settings']['lock_eng']
         end
-
           local lock_badw = "no"
     if data[tostring(msg.to.id)]['settings']['lock_badw'] then
         lock_badw = data[tostring(msg.to.id)]['settings']['lock_badw']
@@ -239,7 +238,7 @@ local lock_sticker = "ok"
         lock_chat = data[tostring(msg.to.id)]['settings']['lock_chat']
         end
          local settings = data[tostring(target)]['settings']
-  local text = "Group settings:\nLock group name : "..settings.lock_name.."\nLock group photo : "..settings.lock_photo.."\nLock group tag : "..lock_tag.."\nLock group member : "..settings.lock_member.."\nLock group english 🗣 : "..lock_eng.."\n Lock group leave : "..lock_leave.."\nLock group bad words : "..lock_badw.."\nLock group links : "..lock_link.."\nLock group sticker : "..lock_sticker.."\nflood sensitivity : "..NUM_MSG_MAX.."\nBot protection : "..bots_protection--"\n> Lock group chat : "..lock_chat..""\nPublic: "..public
+  local text = "Group settings:\nLock group name : "..settings.lock_name.."\nLock group photo : "..settings.lock_photo.."\nLock group tag : "..lock_tag.."\nLock group member : "..settings.lock_member.."\nLock group english 🗣 : "..lock_eng.."\n Lock group leave : "..lock_leave.."\nLock group bad words : "..lock_badw.."\nLock group links : "..lock_link.."\nLock group sticker : "..lock_sticker.."\nflood sensitivity : "..NUM_MSG_MAX.."\nBot protection : "..bots_protection-"-\n Lock group chat : "..lock_chat.."\nPublic: "..public
   return text
 end
 
@@ -265,7 +264,6 @@ local function lock_group_chat(msg, data, target)
   if not is_momod(msg) then
     return "For moderators only!"
   end
-  
   local group_chat_lock = data[tostring(target)]['settings']['lock_chat']
   if group_chat_lock == 'yes' then
     return 'chat is already locked!'
@@ -429,6 +427,10 @@ local function lock_group_eng(msg, data, target)
   if not is_momod(msg) then
     return "For moderators only!"
   end
+  local function lock_group_chat(msg, data, target)
+  if not is_momod(msg) then
+    return "For moderators only!"
+  end
   local group_eng_lock = data[tostring(target)]['settings']['lock_eng']
   if group_eng_lock == 'yes' then
     return 'english is already locked!'
@@ -465,7 +467,10 @@ local function lock_group_eng(msg, data, target)
     return 'english has been locked!'
   end
 end
-
+local group_chat_lock = data[tostring(target)]['settings']['lock_chat']
+  if group_chat_lock == 'yes' then
+    return 'chat is already locked!'
+  else
 local function unlock_group_eng(msg, data, target)
   if not is_momod(msg) then
     return "For moderators only!"
